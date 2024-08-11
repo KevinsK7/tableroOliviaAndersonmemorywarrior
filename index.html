@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Detective - Memory Warrior</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #0231BC;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #0231BC;
+            margin-bottom: 4px;
+            text-shadow: 2px 2px 10px #0231BC;
+        }
+        .board {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            background-image: url('https://png.pngtree.com/background/20220731/original/pngtree-black-and-white-travel-city-map-picture-image_1904548.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* Este filtro ahora solo se aplica al fondo */
+        }
+        .location {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-image: url('https://e7.pngegg.com/pngimages/29/718/png-clipart-discovery-place-kids-huntersville-computer-icons-icon-design-others-miscellaneous-black-thumbnail.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            z-index: 1;
+            filter: drop-shadow(2px 2px 10px #0231BC);
+        }
+        .note {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 1.0);
+            border: 1px solid #0231BC;
+            padding: 10px;
+            width: 200px;
+            display: none;
+            z-index: 2;
+            color: #0231BC;
+            text-shadow: 2px 2px 10px #0231BC;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mapa de Wester City <h1> 
+     <h3> Olivia Anderson - Memory Warrior</h3>
+<h4> información secreta de FOX group, recopilada por los miembros de la organización <h4>
+
+    <div class="board">
+        <!-- Ubicaciones -->
+        <div class="location" style="top: 10%; left: 20%;" onclick="toggleNote('note1')"></div>
+        <div class="location" style="top: 50%; left: 25%;" onclick="toggleNote('note2')"></div>
+        <div class="location" style="top: 70%; left: 60%;" onclick="toggleNote('note3')"></div>
+        <div class="location" style="top: 30%; left: 75%;" onclick="toggleNote('note4')"></div>
+        <div class="location" style="top: 60%; left: 10%;" onclick="toggleNote('note5')"></div>
+        <div class="location" style="top: 80%; left: 45%;" onclick="toggleNote('note6')"></div>
+        <div class="location" style="top: 40%; left: 55%;" onclick="toggleNote('note7')"></div>
+        <!-- Agrega 15 ubicaciones más -->
+        <div class="location" style="top: 15%; left: 35%;" onclick="toggleNote('note8')"></div>
+        <div class="location" style="top: 25%; left: 65%;" onclick="toggleNote('note9')"></div>
+        <div class="location" style="top: 35%; left: 15%;" onclick="toggleNote('note10')"></div>
+        <div class="location" style="top: 45%; left: 85%;" onclick="toggleNote('note11')"></div>
+        <div class="location" style="top: 55%; left: 40%;" onclick="toggleNote('note12')"></div>
+        <div class="location" style="top: 65%; left: 70%;" onclick="toggleNote('note13')"></div>
+        <div class="location" style="top: 75%; left: 20%;" onclick="toggleNote('note14')"></div>
+        <div class="location" style="top: 85%; left: 80%;" onclick="toggleNote('note15')"></div>
+        <div class="location" style="top: 90%; left: 30%;" onclick="toggleNote('note16')"></div>
+        <div class="location" style="top: 20%; left: 10%;" onclick="toggleNote('note17')"></div>
+        <div class="location" style="top: 30%; left: 90%;" onclick="toggleNote('note18')"></div>
+        <div class="location" style="top: 40%; left: 25%;" onclick="toggleNote('note19')"></div>
+        <div class="location" style="top: 50%; left: 75%;" onclick="toggleNote('note20')"></div>
+        <div class="location" style="top: 60%; left: 35%;" onclick="toggleNote('note21')"></div>
+        <div class="location" style="top: 70%; left: 50%;" onclick="toggleNote('note22')"></div>
+        <div class="location" style="top: 25%; left: 55%;" onclick="toggleNote('note23')"></div>
+
+        <!-- Notas -->
+        <div id="note1" class="note" style="top: 15%; left: 25%;">
+            <p><strong>Prisión Wester:</strong> Última ubicación conocida del prisionero 62.</p>
+        </div>
+        <div id="note2" class="note" style="top: 55%; left: 30%;">
+            <p><strong>Biblioteca de Wester:</strong> Se encontraron documentos antiguos sobre "Proyecto Neural".</p>
+        </div>
+        <div id="note3" class="note" style="top: 75%; left: 65%;">
+            <p><strong>Corporación Neural:</strong> Información confidencial sobre manipulación de memoria.</p>
+        </div>
+        <div id="note4" class="note" style="top: 35%; left: 80%;">
+            <p><strong>Café Codex:</strong> Punto de encuentro de hackers y espías urbanos.</p>
+        </div>
+        <div id="note5" class="note" style="top: 65%; left: 15%;">
+            <p><strong>Laboratorio Sinclair:</strong> Experimentos avanzados en neurociencia.</p>
+        </div>
+        <div id="note6" class="note" style="top: 85%; left: 50%;">
+            <p><strong>Antigua Fábrica de Textiles:</strong> Lugar frecuentado por el prisionero antes de su captura.</p>
+        </div>
+        <div id="note7" class="note" style="top: 45%; left: 60%;">
+            <p><strong>Estación Central:</strong> Posible ruta de escape utilizada por el prisionero 62.</p>
+        </div>
+        <div id="note8" class="note" style="top: 20%; left: 40%;">
+            <p><strong>Almacén Omega:</strong> Se encontraron cajas marcadas con "Proyecto Omega".</p>
+        </div>
+        <div id="note9" class="note" style="top: 30%; left: 70%;">
+            <p><strong>Parque Wester:</strong> Escenario de reuniones secretas.</p>
+        </div>
+        <div id="note10" class="note" style="top: 40%; left: 20%;">
+            <p><strong>Hotel Eclipse:</strong> Registro de una reserva bajo un nombre falso.</p>
+        </div>
+        <div id="note11" class="note" style="top: 50%; left: 90%;">
+            <p><strong>Torre Wester:</strong> Punto de vigilancia clave.</p>
+        </div>
+        <div id="note12" class="note" style="top: 60%; left: 45%;">
+            <p><strong>Centro Comercial Omega:</strong> Se detectaron movimientos inusuales.</p>
+        </div>
+        <div id="note13" class="note" style="top: 70%; left: 75%;">
+            <p><strong>Colegio Wester:</strong> Ex-alumnos vinculados a "Proyecto Neural".</p>
+        </div>
+        <div id="note14" class="note" style="top: 80%; left: 25%;">
+            <p><strong>Hospital Wester:</strong> Documentos médicos alterados.</p>
+        </div>
+        <div id="note15" class="note" style="top: 90%; left: 85%;">
+            <p><strong>Banco Wester:</strong> Transacciones sospechosas vinculadas al prisionero.</p>
+        </div>
+        <div id="note16" class="note" style="top: 95%; left: 35%;">
+            <p><strong>Cementerio Wester:</strong> Pistas en lápidas viejas.</p>
+        </div>
+        <div id="note17" class="note" style="top: 25%; left: 15%;">
+            <p><strong>Oficinas Wester:</strong> Documentos relacionados con el caso.</p>
+        </div>
+        <div id="note18" class="note" style="top: 35%; left: 95%;">
+            <p><strong>Residencia Eclipse:</strong> Último lugar visto.</p>
+        </div>
+        <div id="note19" class="note" style="top: 45%; left: 30%;">
+            <p><strong>Garaje Omega:</strong> Vehículos involucrados en la fuga.</p>
+        </div>
+        <div id="note20" class="note" style="top: 55%; left: 80%;">
+            <p><strong>Calle Wester:</strong> Rastros de huellas encontradas.</p>
+        </div>
+        <div id="note21" class="note" style="top: 65%; left: 40%;">
+            <p><strong>Rascacielos Wester:</strong> Oficina de un sospechoso clave.</p>
+        </div>
+        <div id="note22" class="note" style="top: 75%; left: 55%;">
+            <p><strong>Puente Wester:</strong> Pistas abandonadas en la escena.</p>
+        </div>
+        <div id="note23" class="note" style="top: 30%; left: 60%;">
+            <p><strong>Consultorio Alicia Scott:</strong> Abrió el consultorio hace poco, muy sospechoso se necesita investigar.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleNote(noteId) {
+            const note = document.getElementById(noteId);
+            note.style.display = 'block';
+            setTimeout(() => {
+                note.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
 
